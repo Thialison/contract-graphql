@@ -8,9 +8,9 @@ run_contract_verify:
 
 run_contract_test_consumer: 
 	@echo "Contract Testing Generation ....."
-	@cd post-ui && yarn
+	@cd post-ui && yarn test
 
 run_contract_publish: 
 	@echo "Contract Testing Publish ....."
-	@cd post-ui && yarn
+	@cd post-ui && yarn contract:publish
 

@@ -56,6 +56,7 @@ export class Resolvers {
     @Arg("password") password: string,
     @Arg("age") age: number
   ) {
+    // Remove age from this Object
     const newUser = { id: uuidv4(), name, password, age };
 
     this.users.push(newUser);

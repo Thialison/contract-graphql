@@ -5,7 +5,7 @@ import path from "path";
 import { buildSchema } from "type-graphql";
 import { Resolvers } from "./resolvers/Resolvers";
 
-async function main() {
+export async function server() {
   const schema = await buildSchema({
     resolvers: [Resolvers],
     emitSchemaFile: path.resolve(__dirname, "schema.gql"),
@@ -20,4 +20,4 @@ async function main() {
   console.log(`Server is running on ${url}`);
 }
 
-main();
+server();

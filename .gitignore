@@ -1,3 +1,5 @@
 back-post/node_modules
 post-ui/node_modules
 .vscode
+post-ui/pact/logs
+post-ui/pact/pacts
