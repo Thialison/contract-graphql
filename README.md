@@ -52,4 +52,21 @@ make post-ui
 > Acesse o Front em: http://localhost:3000.
 
 ## Criação, Publicação e Validação de um Contrato
-  ...
+
+```
+make run_contract_test_consumer
+```
+
+> O contrato será gerado em: **./contract-graphql/post-ui/pact/pacts**
+
+```
+make run_contract_publish
+```
+
+> O contrato gerado será publicado no pact broker em: http://localhost:9292
+
+```
+make run_contract_verify
+```
+
+> O contrato será validado entre o frontend e o backend. **P.S.: É necessário ter o backend rodando.**

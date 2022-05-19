@@ -2,6 +2,9 @@
   "name": "post-ui",
   "version": "1.0.0",
   "author": "Thialison Souza",
+  "engines": {
+    "node": ">=16.13.1"
+  },
   "private": true,
   "scripts": {
     "start": "react-scripts start",
