@@ -36,7 +36,7 @@ As credenciais estão no .env <br>
 Instalando as dependências e iniciando o backend
 
 ```
-make back-post
+make back_post
 ```
   
 > O playground do GraphiQl estará disponível em http://localhost:4000
@@ -47,7 +47,7 @@ make back-post
 Instalando as dependências e iniciando o frontend
 
 ```
-make post-ui
+make post_ui
 ```
 > Acesse o Front em: http://localhost:3000.
 
