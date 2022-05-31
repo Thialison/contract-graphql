@@ -59,7 +59,7 @@ describe("mutation createUser on /graphql", () => {
             createUser: {
               id: Matchers.like("374d700f-521d-4a00-a992-d37261fcdc9d"),
               name: Matchers.like("Fake Author"),
-              age: Matchers.like(33),
+              age: Matchers.like(32),
             },
           },
         },

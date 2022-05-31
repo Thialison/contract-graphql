@@ -10,7 +10,7 @@ post_ui:
 	@echo "Installing dependencies and Running frontend ....."
 	@cd post-ui && yarn install && yarn start
 
-run_contract_test_consumer: 
+run_contract_generate: 
 	@echo "Contract Testing Generation ....."
 	@cd post-ui && yarn test
 
