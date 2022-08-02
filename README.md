@@ -10,9 +10,10 @@
 > A ideia deste projeto é mostrar como usar o pact broker (criação, publicação e validação de um contrato) tendo um **consumer** 
   e um **provider** que interagem através do GraphQL
   
-Para Saber mais sobre teste de contrato, recomendo ler:<br>
-- https://docs.pact.io/ <br>
-- https://martinfowler.com/articles/consumerDrivenContracts.html
+Para Saber mais sobre teste de contrato, recomendo ler/assistir:<br>
+- [Pact docs](https://docs.pact.io/) <br>
+- [Tio Martin Fowler](https://martinfowler.com/articles/consumerDrivenContracts.html) <br>
+- [DevTests #38: Teste de contrato com Pact num contexto GraphQL](https://www.youtube.com/watch?v=KtCwZ5h8LZ8&t=3784s&ab_channel=DevTestsBR)
 
 
 ## Dependências
