@@ -1,32 +1,6 @@
 version: "3"
 
 services:
-  # backend:
-  #   build:
-  #     context: back-post
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "4000:4000"
-  #   restart: always
-  # frontend:
-  #   build:
-  #     context: post-ui
-  #     dockerfile: Dockerfile
-  #   depends_on:
-  #     - backend
-  #   ports:
-  #     - "3000:3000"
-  #   restart: always
-  postgres:
-    image: postgres
-    ports:
-      - "5432:5432"
-    healthcheck:
-      test: psql postgres --command "select 1" -U postgres
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: postgres
   pact-broker:
     image: pactfoundation/pact-broker:2.87.0.2
     ports:
@@ -42,3 +16,13 @@ services:
       PACT_BROKER_LOG_LEVEL: INFO
       PACT_BROKER_SQL_LOG_LEVEL: DEBUG
       PACT_BROKER_DATABASE_CONNECT_MAX_RETRIES: "5"
+  postgres:
+    image: postgres
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: psql postgres --command "select 1" -U postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: postgres

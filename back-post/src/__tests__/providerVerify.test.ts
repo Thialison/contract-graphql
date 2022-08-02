@@ -3,7 +3,7 @@ import { Verifier } from "@pact-foundation/pact";
 describe("Pact Verification", () => {
   it("validates the expectations of Matching Service", async () => {
     const opts = {
-      providerBaseUrl: "http://localhost:4000/",
+      providerBaseUrl: "http://localhost:4000/graphql",
       pactBrokerUrl: "http://localhost:9292/",
       provider: "back-post",
       pactBrokerUsername: "qa",

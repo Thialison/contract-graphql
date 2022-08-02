@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    restart: always
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: test-user
+      POSTGRES_PASSWORD: test-password
+      POSTGRES_DB: postgres
+    ports:
+      - '5432:5432'
