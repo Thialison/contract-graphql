@@ -17,7 +17,8 @@ Para Saber mais sobre teste de contrato, recomendo ler:<br>
 
 ## Dependências
 
-- Nodejs
+- Nodejs 16ˆ
+- Docker
 - Docker Compose
 
 ## Executando o Pact Broker
@@ -36,7 +37,10 @@ As credenciais estão no .env <br>
 Instalando as dependências e iniciando o backend
 
 ```
-make back_post
+cd back-post
+docker-compose up -d postgres
+yarn prisma migrate dev --name init
+yarn dev
 ```
   
 > O playground do GraphiQl estará disponível em http://localhost:4000

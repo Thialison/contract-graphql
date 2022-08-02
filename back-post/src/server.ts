@@ -1,23 +1,49 @@
 import "reflect-metadata";
 
-import { ApolloServer } from "apollo-server";
 import path from "path";
 import { buildSchema } from "type-graphql";
 import { Resolvers } from "./resolvers/Resolvers";
+import { createServer } from "http";
+import express from "express";
+import { ApolloServer } from "apollo-server-express";
+import { prisma } from "./prisma/client";
+import cors from "cors";
 
-export async function server() {
+export async function startServer() {
+  const app = express();
+  const httpServer = createServer(app);
+
+  app.use(
+    cors({
+      origin: "*",
+    })
+  );
+
   const schema = await buildSchema({
     resolvers: [Resolvers],
     emitSchemaFile: path.resolve(__dirname, "schema.gql"),
   });
 
-  const server = new ApolloServer({
+  const apolloServer = new ApolloServer({
     schema,
   });
 
-  const { url } = await server.listen();
+  await apolloServer.start();
 
-  console.log(`Server is running on ${url}`);
+  apolloServer.applyMiddleware({
+    app,
+    path: "/graphql",
+  });
+
+  httpServer.listen({ port: process.env.PORT || 4000 }, () =>
+    console.log(`Server listening on localhost:4000${apolloServer.graphqlPath}`)
+  );
 }
 
-server();
+startServer()
+  .catch((e) => {
+    throw e;
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
