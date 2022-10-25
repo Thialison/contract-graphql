@@ -13,6 +13,7 @@
     "test": "jest src/__tests__/providerVerify.test.ts --runInBand  --forceExit"
   },
   "dependencies": {
+    "@pact-foundation/pact": "^10.1.4",
     "@prisma/client": "^4.1.0",
     "@types/uuid": "^8.3.4",
     "apollo-server": "^3.6.7",
