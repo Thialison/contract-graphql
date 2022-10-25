@@ -40,6 +40,7 @@ Instalando as dependências e iniciando o backend
 ```
 cd back-post
 docker-compose up -d postgres
+yarn install
 yarn prisma migrate dev --name init
 yarn dev
 ```
