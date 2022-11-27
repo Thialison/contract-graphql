@@ -1,4 +1,5 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
+import fetch from "cross-fetch"
 
 export const pactClient = () => {
   return new ApolloClient({
@@ -6,9 +7,9 @@ export const pactClient = () => {
       addTypename: false,
     }),
     link: createHttpLink({
-      fetch: require("node-fetch"),
+      fetch,
       headers: {},
-      uri: `http://localhost:4000/`,
+      uri: `http://localhost:5000/`,
     }),
   });
 };
